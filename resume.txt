@@ -1,0 +1,59 @@
+Contacts:
+         Volchinskiy Maxim Vladislavovich
+         GitHub: https://github.com/Volchinskiy
+         Telegram: https://t.me/m_volchinskiy
+         Phone Number: +380 99 408 58 86
+         Kyiv
+
+Title:
+      React Frontend Developer / Fullstack React Node.js Developer
+
+Summary: 
+        I develop applications on React and Node.js using TypeScript.
+
+Work Experience:
+                The total number of 7 months.
+
+                Metarhia (open source) 07/2022 - Now.
+                1) I am developing a Metaserverless/Console browser IDE.
+                2) Developed a CRUD system for PostgreSQL, which is defined through a JSON description.
+                3) Helped new team members (contributors) to run the project.
+                4) Wrote the main part of the manual "Installation and running on a local machine".
+              
+                We Are Future 03/2022 - 07/2022
+                1) Took an active part in the development of an online store of clothing and accessories.
+                2) Worked in a team of 15 people, developed pages for the store's admin panel from scratch.
+                3) Improved search for products and orders.
+                4) Wrote a script to remove products from a specific supplier (more than 24,000 products).
+                5) Helped new team members run the project and cope with common mistakes.
+                6) Fixed bugs.
+                7) Mastered Next, Redux-Saga, Material UI, Nest, TypeORM, PostgreSQL.
+         
+                Freelance 12/2021 - 03/2022
+                1) Make layout for small business (Zoo store, Tattoo Master Portfolios, etc.)
+                2) Transfer layout to React components.
+                3) In total, I completed 9 orders related to layout, React and pure Js.
+
+Technical skills:
+                 React, Redux, Redux-Saga, Next, React-Hooks, React-Router, Formik, Axios,
+                 Js, TypeScript, SQL, HTML, HTML5, CSS, CSS3, SCSS, SASS, Material UI, Git, 
+                 Node.js, Express, Nest, TypeORM, MongoDB, PostgreSQL.
+
+Languages:
+          English: A2+.
+          Russian: Native.
+          Ukrainian: Native.
+
+About me:
+        In development, I like that I can create, something, which can bring practical benefits to a large number of people.
+
+        Before development, I did tattoos and drew a lot. Therefore, I pay a lot of attention to trifles, especially to what is relate with
+        the visual part of the application. Pixel Perfect is about me.
+
+        In my free time I like doing sports, watching some videos about travelling and improving my English.
+
+Education:
+          All knowledge that I have, I got through self-education and communication with more experienced developers.
+
+Salary expectations:
+                    600 USD. 
