@@ -7,8 +7,152 @@
   <link rel='preconnect' href='https://fonts.googleapis.com'>
   <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
   <link href='https://fonts.googleapis.com/css2?family=DotGothic16&display=swap' rel='stylesheet'>
-  <link rel="stylesheet" href="./style.css">
   <title>Resume</title>
+  <style>
+    html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+@font-face {
+  font-family: Matricha;
+  src: url('./../font/Matricha.ttf') format('truetype');
+}
+
+* {
+  font-size: 1rem;
+  /* font-family: 'Matricha'; */
+  /* font-weight: 600; */
+  box-sizing: border-box;
+}
+
+.paper {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.entering-composition{
+  height: 100%;
+  padding: 10mm 10mm 20mm 10mm;
+}
+
+.title{
+  height: 18mm;
+}
+
+.name {
+  width: fit-content;
+  margin-bottom: 5mm;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #000;
+}
+
+.position {
+  width: fit-content;
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+.body{
+  position: relative;
+  height: 331mm;
+  padding: 5mm;
+  border: 1mm #000;
+  border-style: dashed;
+}
+
+.info-block{
+  margin-bottom: 20px;
+}
+
+.subtitle{
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #000;
+}
+
+.text{
+  padding-left: 5mm;
+  font-size: 1rem;
+}
+
+.left-side{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 153mm;  
+  height: 100%;
+}
+
+.right-side{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 71mm;
+  height: 100%;
+}
+
+dd{
+  padding-left: 5mm;
+  font-size: 1rem;
+  color: rgb(100, 100, 100);
+}
+
+.grayBackground{
+  background-color: rgb(100, 100, 100);
+  color: #fff;
+}
+
+.grayWords{
+  color: rgb(100, 100, 100);
+}
+
+.mb15{
+  margin-bottom: 3mm;
+}
+  </style>
 </head>
 <body>
   <main class='paper'>

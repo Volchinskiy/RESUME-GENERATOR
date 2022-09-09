@@ -1,0 +1,23 @@
+{
+  "name": "resume-generator",
+  "version": "1.0.0",
+  "author": "Maxim Volchinskiy <thyxaxa@gmail.com>",
+  "description": "",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Volchinskiy/RESUME-GENERATOR.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Volchinskiy/RESUME-GENERATOR/issues"
+  },
+  "homepage": "https://github.com/Volchinskiy/RESUME-GENERATOR#readme",
+  "dependencies": {
+    "pdf-creator-node": "^2.3.5"
+  }
+}
