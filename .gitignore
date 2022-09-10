@@ -1,5 +1,9 @@
-/node_modules
+# lock
 package-lock.json
+
+# dependences
+/node_modules
+/front-generator/node_modules
 
 # generated resumes
 /pdfs
