@@ -1,5 +1,106 @@
-.paper {
+.wrapper{
   width: 100%;
   height: 100%;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paper {
+  width: 280 * 2px;
+  height: 396 * 2px;
   background-color: #fff;
+}
+
+.enteringComposition{
+  height: 100%;
+  padding: 15px 15px 30px 15px;
+}
+
+.title{
+  height: 30 * 2px;
+}
+
+.name {
+  margin-bottom: 3 * 2px;
+  font-size: 13 * 2px;
+  font-weight: 600;
+}
+
+.position {
+  font-size: 7.5 * 2px;
+  font-weight: 100;
+}
+
+.body{
+  height: calc(100% - 30 * 2px);
+  padding: 3 * 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: .7 * 2px dashed #000;
+}
+
+.infoBlock{
+  margin-bottom: 2 * 2px;
+}
+
+.subtitle{
+  margin-bottom: 1 * 2px;
+  font-size: 5.5 * 2px;
+  color: #fff;
+  background-color: #000;
+}
+
+.text{
+  padding-left: 5 * 2px;
+  font-size: 8px;
+}
+
+.leftSide{
+  width: 63%;  
+  height: 100%;
+}
+
+.rightSide{
+  width: 33%;
+  height: 100%;
+}
+
+dd{
+  padding-left: 3 * 2px;
+  font-size: 3.5 * 2px;
+  color: rgb(100, 100, 100);
+}
+
+.grayBackground{
+  background-color: rgb(100, 100, 100);
+  color: #fff;
+}
+
+.blackBackground{
+  background-color: #000;
+  color: #fff;
+}
+
+.fatDot{
+  font-size: 4.8 * 2px;
+  font-weight: 900;
+}    
+
+.fatChar{
+  font-weight: 900;
+}
+
+.lh4mm{
+  line-height: 4 * 2px;
+}
+
+.grayWords{
+  color: rgb(100, 100, 100);
+}
+
+.mb3mm{
+  margin-bottom: 3 * 2px;
 }

@@ -9,29 +9,42 @@ function App() {
     initialValues: {
       name: "",
       position: "",
+      summary: "",
+      total: "",
     },
     onSubmit: (values) => {
       console.log(values);
     },
   });
 
-  const inputs = [{ name: "name" }, { name: "position" }];
+  // inputs
+  const title = [{ name: "name" }, { name: "position" }];
+  const summary = [{ name: "summary" }];
+  const workExperience = [{ name: "total" }];
+
+  const renderInput = (input: any) => {
+    const name = input.name;
+    return (
+      <TextField
+        label={name.charAt(0).toLocaleUpperCase() + name.slice(1)}
+        variant="standard"
+        margin="dense"
+        size="small"
+        type="text"
+        {...formik.getFieldProps(name)}
+      />
+    );
+  };
 
   return (
     <main className="page">
       <form className="forms">
-        {inputs.map((input) => {
-          const name = input.name;
-          return (
-            <TextField
-              label={name.charAt(0).toLocaleUpperCase() + name.slice(1)}
-              variant="standard"
-              type="text"
-              {...formik.getFieldProps(name)}
-            />
-          );
-        })}
-        <Button onClick={formik.submitForm}>Create</Button>
+        <div className="wrapper">
+          <div>{title.map(renderInput)}</div>
+          <div>{summary.map(renderInput)}</div>
+          <div>{workExperience.map(renderInput)}</div>
+          <Button onClick={formik.submitForm}>Create</Button>
+        </div>
       </form>
       <div className="liveResume">
         <ResumeTemplate {...formik.values} />
@@ -41,3 +54,15 @@ function App() {
 }
 
 export default App;
+
+// {inputs.map((input) => {
+//   const name = input.name;
+//   return (
+// <TextField
+//   label={name.charAt(0).toLocaleUpperCase() + name.slice(1)}
+//   variant="standard"
+//   type="text"
+//   {...formik.getFieldProps(name)}
+// />
+//   );
+// })}
