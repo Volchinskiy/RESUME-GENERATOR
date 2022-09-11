@@ -1,9 +1,9 @@
 Contacts:
-         Volchinskiy Maxim Vladislavovich
-         GitHub: https://github.com/Volchinskiy
-         Telegram: https://t.me/m_volchinskiy
-         Phone Number: +380 99 408 58 86
-         Kyiv
+Name: Volchinskiy Maxim Vladislavovich
+GitHub: https://github.com/Volchinskiy
+Telegram: https://t.me/m_volchinskiy
+Phone: +380 99 408 58 86
+Location: Kyiv
 
 Title:
       React Frontend Developer / Fullstack React Node.js Developer
@@ -35,9 +35,31 @@ Work Experience:
                 3) In total, I completed 9 orders related to layout, React and pure Js.
 
 Technical skills:
-                 React, Redux, Redux-Saga, Next, React-Hooks, React-Router, Formik, Axios,
-                 Js, TypeScript, SQL, HTML, HTML5, CSS, CSS3, SCSS, SASS, Material UI, Git, 
-                 Node.js, Express, Nest, TypeORM, MongoDB, PostgreSQL.
+React
+Redux
+Redux-Saga
+Next
+React-Hooks
+React-Router
+Formik
+Axios
+Js
+TypeScript
+SQL
+HTML
+HTML5
+CSS
+CSS3
+SCSS
+SASS
+Material UI
+Git
+Node.js
+Express
+Nest
+TypeORM
+MongoDB
+PostgreSQL
 
 Languages:
           English: A2+.
@@ -45,12 +67,12 @@ Languages:
           Ukrainian: Native.
 
 About me:
-        In development, I like that I can create, something, which can bring practical benefits to a large number of people.
+In development, I like that I can create, something, which can bring practical benefits to a large number of people.
 
-        Before development, I did tattoos and drew a lot. Therefore, I pay a lot of attention to trifles, especially to what is relate with
-        the visual part of the application. Pixel Perfect is about me.
+Before development, I did tattoos and drew a lot. Therefore, I pay a lot of attention to trifles, especially to what is relate with
+the visual part of the application. Pixel Perfect is about me.
 
-        In my free time I like doing sports, watching some videos about travelling and improving my English.
+In my free time I like doing sports, watching some videos about travelling and improving my English.
 
 Education:
           All knowledge that I have, I got through self-education and communication with more experienced developers.
