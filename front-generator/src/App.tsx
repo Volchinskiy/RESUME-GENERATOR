@@ -4,6 +4,7 @@ import { TextField, Button } from "@mui/material";
 import TextareaAutosize from "@mui/base/TextareaAutosize";
 
 import ResumeTemplate from "./components/ResumeTemplate/ResumeTemplate";
+import Test from "./components/Test/Test";
 
 // осталось продумать как динамически генерировать куски резюме как например достижение во время работы в компании, их же может быть разное количество или обучение на курсах их тоже может быть много
 // раздел про меня будет всегда содержать 3 абзатца
@@ -11,6 +12,8 @@ import ResumeTemplate from "./components/ResumeTemplate/ResumeTemplate";
 // языков, тех скилов, контактов может быть множество
 
 // когда рендериться резюму в пдф второй проект вылазит за пределы рамки потому что там длинное слово и машина не может его перенести(разделить для переноса на следующюю строку), это решаеться если увеличить ширину правой стороны.
+
+// delete redux...
 
 function App() {
   const formik = useFormik({
@@ -81,7 +84,8 @@ function App() {
     <main className="page">
       <form className="forms">
         <div className="wrapper">
-          <div>{title.map(renderInput)}</div>
+          <Test />
+          {/* <div>{title.map(renderInput)}</div>
           <div>{summary.map(renderInput)}</div>
           <div>{workExperience.map(renderInput)}</div>
           <div>{achievements.map(renderTextArea)}</div>
@@ -91,7 +95,7 @@ function App() {
           <div>{languages.map(renderTextArea)}</div>
           <div>{salary.map(renderInput)}</div>
           <Button>Add Company</Button>
-          <Button onClick={formik.submitForm}>Create</Button>
+          <Button onClick={formik.submitForm}>Create</Button> */}
         </div>
       </form>
       <div className="liveResume">
