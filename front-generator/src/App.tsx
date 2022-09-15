@@ -4,7 +4,8 @@ import { TextField, Button } from "@mui/material";
 import TextareaAutosize from "@mui/base/TextareaAutosize";
 
 import ResumeTemplate from "./components/ResumeTemplate/ResumeTemplate";
-import Test from "./components/Test/Test";
+import Test1 from "./components/Test1/Test1";
+import Test2 from "./components/Test2/Test2";
 
 // осталось продумать как динамически генерировать куски резюме как например достижение во время работы в компании, их же может быть разное количество или обучение на курсах их тоже может быть много
 // раздел про меня будет всегда содержать 3 абзатца
@@ -13,90 +14,81 @@ import Test from "./components/Test/Test";
 
 // когда рендериться резюму в пдф второй проект вылазит за пределы рамки потому что там длинное слово и машина не может его перенести(разделить для переноса на следующюю строку), это решаеться если увеличить ширину правой стороны.
 
-// delete redux...
-
 function App() {
   const formik = useFormik({
     initialValues: {
-      name: "",
-      position: "",
-      summary: "",
-      total: "",
+      name_input: "",
+      position_input: "",
+      summary_input: "",
+      total_input: "",
 
-      company: "",
-      date: "",
-      achievements: "",
+      companies: [
+        { company_input1: "", date_input1: "", achievements_textarea1: "" },
+      ],
 
-      texSkills: "",
-      salary: "",
-      contacts: "",
-      languages: "",
-      aboutMe: "",
+      texSkills_textarea: "",
+      salary_input: "",
+      contacts_textarea: "",
+      languages_textarea: "",
+      aboutMe_textarea: "",
     },
     onSubmit: (values) => {
       console.log(values);
     },
   });
 
-  // inputs
-  const title = [{ name: "name" }, { name: "position" }];
-  const summary = [{ name: "summary" }];
-  const workExperience = [
-    { name: "total" },
-    { name: "company" },
-    { name: "date" },
-  ];
-  const achievements = [{ name: "achievements" }];
-  const texSkills = [{ name: "texSkills" }];
-  const salary = [{ name: "salary" }];
-  const contacts = [{ name: "contacts" }];
-  const languages = [{ name: "languages" }];
-  const aboutMe = [{ name: "aboutMe" }];
+  const renderForms = (formikValues: any) => {
+    const forms = Object.keys(formikValues);
 
-  const renderInput = (input: any) => {
-    const name = input.name;
-    return (
-      <TextField
-        label={name.charAt(0).toLocaleUpperCase() + name.slice(1)}
-        variant="standard"
-        margin="dense"
-        size="small"
-        type="text"
-        {...formik.getFieldProps(name)}
-      />
-    );
+    return forms.map((form, i) => {
+      const [name, tag] = form.split("_");
+
+      if (name === "companies") {
+        const companies = formikValues[form];
+        return companies.map((company: any) => {
+          // const forms = Object.keys(company);
+          return renderForms(company);
+        });
+        // console.log(formikValues[form]);
+      }
+
+      if (tag === "input") {
+        return (
+          <TextField
+            key={`${form}_${i}`}
+            label={name.charAt(0).toLocaleUpperCase() + name.slice(1)}
+            variant="standard"
+            margin="dense"
+            size="small"
+            type="text"
+            {...formik.getFieldProps(form)}
+          />
+        );
+      }
+
+      return (
+        <TextareaAutosize
+          key={`${form}_${i}`}
+          minRows={3}
+          placeholder={name.charAt(0).toLocaleUpperCase() + name.slice(1)}
+          {...formik.getFieldProps(form)}
+        />
+      );
+    });
   };
 
-  const renderTextArea = (input: any) => {
-    const name = input.name;
-    return (
-      <TextareaAutosize
-        placeholder={name.charAt(0).toLocaleUpperCase() + name.slice(1)}
-        minRows={5}
-        {...formik.getFieldProps(name)}
-      />
-    );
+  const addComapny = () => {
+    // const { length } = Object.keys(formik.values);
+    // formik.setValues({ ...formik.values, ["rr" + length]: "" });
   };
-
-  const addComapny = () => {};
 
   return (
     <main className="page">
       <form className="forms">
-        <div className="wrapper">
-          <Test />
-          {/* <div>{title.map(renderInput)}</div>
-          <div>{summary.map(renderInput)}</div>
-          <div>{workExperience.map(renderInput)}</div>
-          <div>{achievements.map(renderTextArea)}</div>
-          <div>{aboutMe.map(renderTextArea)}</div>
-          <div>{texSkills.map(renderTextArea)}</div>
-          <div>{contacts.map(renderTextArea)}</div>
-          <div>{languages.map(renderTextArea)}</div>
-          <div>{salary.map(renderInput)}</div>
-          <Button>Add Company</Button>
-          <Button onClick={formik.submitForm}>Create</Button> */}
-        </div>
+        <Test1></Test1>
+        {/* <Test2></Test2> */}
+        {/* <div className="wrapper">{renderForms(formik.values)}</div>
+        <Button onClick={addComapny}>Add Company</Button> */}
       </form>
       <div className="liveResume">
         <ResumeTemplate {...formik.values} />

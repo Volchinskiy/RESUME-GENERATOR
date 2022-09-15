@@ -6,17 +6,17 @@ interface propsI {
 }
 
 export default function ResumeTemplate({
-  name,
-  position,
-  summary,
-  total,
+  name_input,
+  position_input,
+  summary_input,
+  total_input,
   company,
   date,
   achievements,
-  texSkills,
-  contacts,
-  languages,
-  salary,
+  texSkills_textarea,
+  contacts_textarea,
+  languages_textarea,
+  salary_input,
   aboutMe,
 }: propsI) {
   const makeArray = (str: string) => str.split("\n");
@@ -41,16 +41,16 @@ export default function ResumeTemplate({
     ];
   }
 
-  if (texSkills) {
-    texSkills = makeArray(texSkills);
+  if (texSkills_textarea) {
+    texSkills_textarea = makeArray(texSkills_textarea);
   } else {
-    texSkills = ["React", "Redux", "JS"];
+    texSkills_textarea = ["React", "Redux", "JS"];
   }
 
-  if (contacts) {
-    contacts = makeAnoter(contacts);
+  if (contacts_textarea) {
+    contacts_textarea = makeAnoter(contacts_textarea);
   } else {
-    contacts = [
+    contacts_textarea = [
       ["Name:", "John Doe"],
       ["GitHub:", "https://github.com/..."],
       ["Phone:", "+000 00 000 00 00"],
@@ -59,10 +59,10 @@ export default function ResumeTemplate({
     ];
   }
 
-  if (languages) {
-    languages = makeAnoter(languages);
+  if (languages_textarea) {
+    languages_textarea = makeAnoter(languages_textarea);
   } else {
-    languages = [
+    languages_textarea = [
       ["Ukrainian", "Native"],
       ["English", "C2"],
       ["...", ""],
@@ -86,11 +86,13 @@ export default function ResumeTemplate({
           <div className={s.title}>
             <h1 className={s.name}>
               <span className={s.blackBackground}>
-                {name ? name : "Enter name."}
+                {name_input ? name_input : "Enter name."}
               </span>
             </h1>
             <h2 className={s.position}>
-              {position ? position : "Enter position that you want."}
+              {position_input
+                ? position_input
+                : "Enter position that you want."}
             </h2>
           </div>
           <div className={s.body}>
@@ -98,8 +100,8 @@ export default function ResumeTemplate({
               <div className={s.infoBlock}>
                 <div className={s.subtitle}>Summary:</div>
                 <div className={s.text}>
-                  {summary
-                    ? summary
+                  {summary_input
+                    ? summary_input
                     : "Enter a short information about yourself."}
                 </div>
               </div>
@@ -107,7 +109,11 @@ export default function ResumeTemplate({
               <div className={s.infoBlock}>
                 <div className={s.subtitle}>Work Experience:</div>
                 <div className={`${s.text} ${s.lh4mm}`}>
-                  <p>{total ? total : "In total I work ... years/months."}</p>
+                  <p>
+                    {total_input
+                      ? total_input
+                      : "In total I work ... years/months."}
+                  </p>
                   <br />
                   Company:
                   <span className={s.grayBackground}>
@@ -118,7 +124,7 @@ export default function ResumeTemplate({
                   </span>
                   <br />
                   {achievements.map((achievement: any, i: number) => (
-                    <div key={`${i} + ${achievement}`}>
+                    <div key={`${achievement}_${i}`}>
                       <span className={s.fatDot}>•</span>
                       {achievement}
                       <br />
@@ -255,8 +261,8 @@ export default function ResumeTemplate({
               <div className={s.infoBlock}>
                 <div className={s.subtitle}>About Me:</div>
                 <div className={`${s.text} ${s.lh4mm}`}>
-                  {aboutMe.map((text: string) => (
-                    <div>
+                  {aboutMe.map((text: string, i: number) => (
+                    <div key={`${text}_${i}`}>
                       <p>{text}</p>
                       <br />
                     </div>
@@ -269,8 +275,8 @@ export default function ResumeTemplate({
 
               <div className={s.infoBlock}>
                 <div className={s.subtitle}>Technical Skills:</div>
-                {texSkills.map((skill: string, i: number) => (
-                  <div key={`${skill}_${i}`} className={`${s.text} ${s.lh4mm}`}>
+                {texSkills_textarea.map((skill: string, i: number) => (
+                  <div className={`${s.text} ${s.lh4mm}`} key={`${skill}_${i}`}>
                     {skill}
                   </div>
                 ))}
@@ -303,8 +309,8 @@ export default function ResumeTemplate({
 
               <div className={s.infoBlock}>
                 <div className={s.subtitle}>Contacts:</div>
-                {contacts.map((contact: any) => (
-                  <div className={s.text}>
+                {contacts_textarea.map((contact: any, i: number) => (
+                  <div className={s.text} key={`${contact[0]}_${i}`}>
                     <span className={s.fatChar}>{contact[0]}</span> {contact[1]}
                   </div>
                 ))}
@@ -312,9 +318,9 @@ export default function ResumeTemplate({
 
               <div className={s.infoBlock}>
                 <div className={s.subtitle}>Languages:</div>
-                {languages.map((language: any) => (
-                  <div className={s.text}>
-                    <span className={s.fatChar}>{language[0]}</span>{" "}
+                {languages_textarea.map((language: any, i: number) => (
+                  <div className={s.text} key={`${language[0]}_${i}`}>
+                    <span className={s.fatChar}>{language[0]}</span>
                     {language[1]}
                   </div>
                 ))}
@@ -323,7 +329,7 @@ export default function ResumeTemplate({
               <div className={s.infoBlock}>
                 <div className={s.subtitle}>Salary Expectations:</div>
                 <div className={s.text}>
-                  {salary ? salary : "1 limon/nona sec"}
+                  {salary_input ? salary_input : "1 limon/nona sec"}
                 </div>
               </div>
             </div>
