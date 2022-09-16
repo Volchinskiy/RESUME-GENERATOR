@@ -29,7 +29,7 @@ export default function Test1() {
           achievements_textarea2: "",
         },
       },
-      name: "",
+      name_input: "",
     },
     onSubmit(value) {
       console.log(value);
@@ -66,7 +66,7 @@ export default function Test1() {
   };
 
   const renderForms = (formikValues: any) => {
-    const forms = Object.keys(formikValues); // companies
+    const forms = Object.keys(formikValues);
 
     return forms.map((form, i) => {
       const [name, tag] = form.split("_");
@@ -82,10 +82,8 @@ export default function Test1() {
               <div>{company}</div>
               {forms.map((form, i) => {
                 const [label, tag] = form.split("_");
-
                 const name = `companies.${company}.${form}`;
-
-                if (tag === "input") {
+                if (tag.includes("input")) {
                   return (
                     <TextField
                       key={`${form}_${i}`}
@@ -102,7 +100,6 @@ export default function Test1() {
                     />
                   );
                 }
-
                 return (
                   <TextareaAutosize
                     key={`${form}_${i}`}
@@ -115,14 +112,11 @@ export default function Test1() {
                     value={formik.values[`.${name}`]}
                   />
                 );
-
-                // return <div>{form}</div>;
               })}
             </div>
           );
         });
       }
-
       const value = formik.values[form];
       if (tag === "input") return input(form, value, name, i);
       return textarea(form, value, name, i);

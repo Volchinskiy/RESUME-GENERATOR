@@ -8,8 +8,12 @@
 }
 
 .paper {
+  min-width: 280 * 2px;
   width: 280 * 2px;
+  max-width: 280 * 2px;
+  min-height: 396 * 2px;
   height: 396 * 2px;
+  max-height: 396 * 2px;
   background-color: #fff;
 }
 

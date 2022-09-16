@@ -10,14 +10,20 @@ export default function ResumeTemplate({
   position_input,
   summary_input,
   total_input,
-  company,
-  date,
-  achievements,
+  // companies: {
+  //   company1: { companyName_input1, date_input1, achievements_textarea1 },
+  // },
+  // experience: {
+  //   experience1: { experienceName_input1, achievements_textarea1 },
+  // },
+  education_textarea,
+  aboutMe_textarea,
+
   texSkills_textarea,
+  projects_textarea,
   contacts_textarea,
   languages_textarea,
   salary_input,
-  aboutMe,
 }: propsI) {
   const makeArray = (str: string) => str.split("\n");
   const makeAnoter = (str: string) => {
@@ -29,17 +35,17 @@ export default function ResumeTemplate({
     return arr2;
   };
 
-  if (achievements) {
-    achievements = makeArray(achievements);
-  } else {
-    achievements = [
-      "Сame to work with a happy face :)",
-      "Helped new team members run the project and cope with common mistakes.",
-      "Fixed bugs.",
-      "Mastered new technologies!",
-      "••",
-    ];
-  }
+  // if (achievements) {
+  //   achievements = makeArray(achievements);
+  // } else {
+  //   achievements = [
+  //     "Сame to work with a happy face :)",
+  //     "Helped new team members run the project and cope with common mistakes.",
+  //     "Fixed bugs.",
+  //     "Mastered new technologies!",
+  //     "••",
+  //   ];
+  // }
 
   if (texSkills_textarea) {
     texSkills_textarea = makeArray(texSkills_textarea);
@@ -69,10 +75,10 @@ export default function ResumeTemplate({
     ];
   }
 
-  if (aboutMe) {
-    aboutMe = makeArray(aboutMe);
+  if (aboutMe_textarea) {
+    aboutMe_textarea = makeArray(aboutMe_textarea);
   } else {
-    aboutMe = [
+    aboutMe_textarea = [
       "In development, I like that I can create, something, which can bring practical benefits to a large number of people.",
       "Before development, I did tattoos and drew a lot. Therefore, I pay a lot of attention to trifles, especially to what is relate with the visual part of the application. Pixel Perfect is about me.",
       "In my free time I like doing sports, watching some videos about travelling and improving my English.",
@@ -116,7 +122,7 @@ export default function ResumeTemplate({
                   </p>
                   <br />
                   Company:
-                  <span className={s.grayBackground}>
+                  {/* <span className={s.grayBackground}>
                     {company ? company : "Company #1"}
                   </span>
                   <span className={s.grayWords}>
@@ -129,7 +135,7 @@ export default function ResumeTemplate({
                       {achievement}
                       <br />
                     </div>
-                  ))}
+                  ))} */}
                   <br />
                   <span className={s.grayBackground}>Freelance</span>
                   <span className={s.grayWords}>12/2021 - 05/2022</span>
@@ -261,7 +267,7 @@ export default function ResumeTemplate({
               <div className={s.infoBlock}>
                 <div className={s.subtitle}>About Me:</div>
                 <div className={`${s.text} ${s.lh4mm}`}>
-                  {aboutMe.map((text: string, i: number) => (
+                  {aboutMe_textarea.map((text: string, i: number) => (
                     <div key={`${text}_${i}`}>
                       <p>{text}</p>
                       <br />
