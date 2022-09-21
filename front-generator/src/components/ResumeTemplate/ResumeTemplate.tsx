@@ -6,10 +6,10 @@ interface propsI {
 }
 
 export default function ResumeTemplate({
-  name_input,
-  position_input,
-  summary_input,
-  total_input,
+  name,
+  position,
+  summary,
+  total,
   // companies: {
   //   company1: { companyName_input1, date_input1, achievements_textarea1 },
   // },
@@ -17,109 +17,34 @@ export default function ResumeTemplate({
   //   experience1: { experienceName_input1, achievements_textarea1 },
   // },
   education_textarea,
-  aboutMe_textarea,
-
-  texSkills_textarea,
+  aboutMe,
+  texSkills,
   projects_textarea,
-  contacts_textarea,
-  languages_textarea,
-  salary_input,
+  contacts,
+  languages,
+  salary,
 }: propsI) {
-  const makeArray = (str: string) => str.split("\n");
-  const makeAnoter = (str: string) => {
-    const arr = str.split("\n");
-    const arr2 = arr.map((str) => {
-      const arr = str.split(" ");
-      return [arr[0], arr.slice(1).join(" ")];
-    });
-    return arr2;
-  };
-
-  // if (achievements) {
-  //   achievements = makeArray(achievements);
-  // } else {
-  //   achievements = [
-  //     "Сame to work with a happy face :)",
-  //     "Helped new team members run the project and cope with common mistakes.",
-  //     "Fixed bugs.",
-  //     "Mastered new technologies!",
-  //     "••",
-  //   ];
-  // }
-
-  if (texSkills_textarea) {
-    texSkills_textarea = makeArray(texSkills_textarea);
-  } else {
-    texSkills_textarea = ["React", "Redux", "JS"];
-  }
-
-  if (contacts_textarea) {
-    contacts_textarea = makeAnoter(contacts_textarea);
-  } else {
-    contacts_textarea = [
-      ["Name:", "John Doe"],
-      ["GitHub:", "https://github.com/..."],
-      ["Phone:", "+000 00 000 00 00"],
-      ["Location:", "Dream City"],
-      ["...", ""],
-    ];
-  }
-
-  if (languages_textarea) {
-    languages_textarea = makeAnoter(languages_textarea);
-  } else {
-    languages_textarea = [
-      ["Ukrainian", "Native"],
-      ["English", "C2"],
-      ["...", ""],
-    ];
-  }
-
-  if (aboutMe_textarea) {
-    aboutMe_textarea = makeArray(aboutMe_textarea);
-  } else {
-    aboutMe_textarea = [
-      "In development, I like that I can create, something, which can bring practical benefits to a large number of people.",
-      "Before development, I did tattoos and drew a lot. Therefore, I pay a lot of attention to trifles, especially to what is relate with the visual part of the application. Pixel Perfect is about me.",
-      "In my free time I like doing sports, watching some videos about travelling and improving my English.",
-    ];
-  }
-
   return (
     <div className={s.wrapper}>
       <div className={s.paper}>
         <div className={s.enteringComposition}>
           <div className={s.title}>
             <h1 className={s.name}>
-              <span className={s.blackBackground}>
-                {name_input ? name_input : "Enter name."}
-              </span>
+              <span className={s.blackBackground}>{name}</span>
             </h1>
-            <h2 className={s.position}>
-              {position_input
-                ? position_input
-                : "Enter position that you want."}
-            </h2>
+            <h2 className={s.position}>{position}</h2>
           </div>
           <div className={s.body}>
             <div className={s.leftSide}>
               <div className={s.infoBlock}>
                 <div className={s.subtitle}>Summary:</div>
-                <div className={s.text}>
-                  {summary_input
-                    ? summary_input
-                    : "Enter a short information about yourself."}
-                </div>
+                <div className={s.text}>{summary}</div>
               </div>
 
               <div className={s.infoBlock}>
                 <div className={s.subtitle}>Work Experience:</div>
                 <div className={`${s.text} ${s.lh4mm}`}>
-                  <p>
-                    {total_input
-                      ? total_input
-                      : "In total I work ... years/months."}
-                  </p>
+                  <p>{total}</p>
                   <br />
                   Company:
                   {/* <span className={s.grayBackground}>
@@ -267,7 +192,7 @@ export default function ResumeTemplate({
               <div className={s.infoBlock}>
                 <div className={s.subtitle}>About Me:</div>
                 <div className={`${s.text} ${s.lh4mm}`}>
-                  {aboutMe_textarea.map((text: string, i: number) => (
+                  {aboutMe.map((text: string, i: number) => (
                     <div key={`${text}_${i}`}>
                       <p>{text}</p>
                       <br />
@@ -281,7 +206,7 @@ export default function ResumeTemplate({
 
               <div className={s.infoBlock}>
                 <div className={s.subtitle}>Technical Skills:</div>
-                {texSkills_textarea.map((skill: string, i: number) => (
+                {texSkills.map((skill: string, i: number) => (
                   <div className={`${s.text} ${s.lh4mm}`} key={`${skill}_${i}`}>
                     {skill}
                   </div>
@@ -315,7 +240,7 @@ export default function ResumeTemplate({
 
               <div className={s.infoBlock}>
                 <div className={s.subtitle}>Contacts:</div>
-                {contacts_textarea.map((contact: any, i: number) => (
+                {contacts.map((contact: any, i: number) => (
                   <div className={s.text} key={`${contact[0]}_${i}`}>
                     <span className={s.fatChar}>{contact[0]}</span> {contact[1]}
                   </div>
@@ -324,7 +249,7 @@ export default function ResumeTemplate({
 
               <div className={s.infoBlock}>
                 <div className={s.subtitle}>Languages:</div>
-                {languages_textarea.map((language: any, i: number) => (
+                {languages.map((language: any, i: number) => (
                   <div className={s.text} key={`${language[0]}_${i}`}>
                     <span className={s.fatChar}>{language[0]}</span>
                     {language[1]}
@@ -335,7 +260,7 @@ export default function ResumeTemplate({
               <div className={s.infoBlock}>
                 <div className={s.subtitle}>Salary Expectations:</div>
                 <div className={s.text}>
-                  {salary_input ? salary_input : "1 limon/nona sec"}
+                  {salary}
                 </div>
               </div>
             </div>

@@ -4,8 +4,7 @@ import { TextField, Button } from "@mui/material";
 import TextareaAutosize from "@mui/base/TextareaAutosize";
 
 import ResumeTemplate from "./components/ResumeTemplate/ResumeTemplate";
-// import Test1 from "./components/Test1/Test1";
-// import Test2 from "./components/Test2/Test2";
+import DataConverter from "./components/DataConverter/DataConverter";
 
 // когда рендериться резюму в пдф второй проект вылазит за пределы рамки потому что там длинное слово и машина не может его перенести(разделить для переноса на следующюю строку), это решаеться если увеличить ширину правой стороны.
 
@@ -165,7 +164,7 @@ function App() {
         <Button onClick={formik.submitForm}>Create</Button>
       </form>
       <div className="liveResume">
-        <ResumeTemplate {...formik.values} />
+        <DataConverter {...formik.values} />
       </div>
     </main>
   );
